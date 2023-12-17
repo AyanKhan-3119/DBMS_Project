@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  web:
+    image: php:8.0-apache
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8000:80
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: dbms_proj
+    ports: 
+      - 3306:3306
